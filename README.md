@@ -1,2 +1,0 @@
-# react-front
-react-redux
