@@ -1,0 +1,98 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/size"
+@import "../../../../styles/bootstrap/variables"
+@import "../../../../styles/common/mixins"
+
+.container
+  background-color: #2c7ee4
+  position: relative
+
+  .container-bg-clouds
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
+  .container-bg
+    position: relative
+    background: url('./img/earth.svg') no-repeat bottom center
+    background-size: contain
+
+  .container-table-cell
+    padding-top: 100px
+
+    +responsive-media('sm')
+      padding-bottom: 25%
+
+    +responsive-media('md')
+      padding-bottom: 25%
+
+    +responsive-media('lg')
+      padding-bottom: 25%
+
+  h1
+    color: #fff
+    padding: 0
+    margin: 0 0 18px
+    font-size: 48px
+
+    +responsive-media('md')
+      margin: 0 0 25px
+      font-size: 48px
+
+    +responsive-media('lg')
+      margin: 0 0 25px
+      font-size: 48px
+
+  p
+    color: #fff
+    font-size: 18px
+
+  .btn-appstore
+    padding: 0
+    margin-top: 25px
+
+    background: url('./img/appstore.svg') no-repeat
+    background-size: contain
+
+    width: 223px
+    height: 68px
+
+    +transition()
+
+    &:hover
+      +opacity(.65)
+
+.btn-scroll-landing
+  width: 60px
+  height: 30px
+  position: absolute
+  z-index: 1
+  margin-left: -30px
+  bottom: 0
+  left: 50%
+  cursor: pointer
+  padding-top: 6px
+  text-align: center
+  background-size: 60px 60px
+  background: url('./img/landing_scroll_btn_white.svg') no-repeat top center
+
+  .icon
+    display: block
+    width: 100%
+    height: 32px
+    background-size: 20px 12px
+    background: url('./img/landing_scroll_icon_blue.svg') no-repeat center center
+
+  &.animate
+    .icon
+      animation: bounce1 1s ease-in-out infinite
+
+@keyframes bounce1
+  0%
+    +translateY(-2px)
+  50%
+    +translateY(2px)
+  100%
+    +translateY(-2px)

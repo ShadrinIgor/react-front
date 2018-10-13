@@ -1,0 +1,25 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+
+.container
+  padding: 16px 32px
+
+  .content
+    vertical-align: top
+    padding-top: 16px
+
+    h4
+      margin-bottom: 4px
+
+    h4, h5
+      margin-top: 0
+
+.cover
+  width: 120px
+  & > span
+    width: 108px
+    height: 108px
+    float: right
+    display: inline-block
+    border-radius: 50%
+    background-color: $gray-lighter

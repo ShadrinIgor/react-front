@@ -1,0 +1,52 @@
+@import "~compass-sass-mixins/lib/compass"
+
+.container
+  padding:
+    bottom: 31px
+    top: 29px
+
+  background:
+    position: center center
+    size: cover
+    color: #45556D
+
+  &, h1
+    color: #fff
+
+  h1
+    margin-top: 27px
+    margin-bottom: 0
+
+  h4
+    margin-top: 8px
+
+.text-block
+  min-height: 72px
+
+.actions
+  margin-top: 24px
+
+  span
+    &:global(.icon_24_done_gray)
+      background-size: 18px 18px
+      margin-left: -8px
+      margin-right: 4px
+
+.back-block
+  a
+    text-decoration: none
+    background: url('./img/direct.png') no-repeat left center
+    padding-left: 30px
+    padding-top: 2px
+
+.icon-mail
+  width: 16px
+  height: 12px
+  margin-top: -1px
+  margin-right: 9px
+  +transition()
+
+.mail
+  &:hover, &:focus
+    .icon-mail
+      background-image: url('./img/mail_dark.svg')

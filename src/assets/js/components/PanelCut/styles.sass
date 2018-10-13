@@ -1,0 +1,26 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.container
+  +transition('height', .5s)
+  &.collapsed
+    overflow: hidden
+
+.icon
+  margin-left: 8px
+  vertical-align: middle
+  background-image: url("./img/up.svg")
+  +transition('background-image')
+
+.button
+  text-align: center
+  border-top: 1px solid $gray-lighter
+  padding-top: 12px
+  padding-bottom: 12px
+  cursor: pointer
+  color: #4c4c4c
+
+  &.collapsed
+    .icon
+      background-image: url("./img/down.svg")

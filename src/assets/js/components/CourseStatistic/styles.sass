@@ -1,0 +1,42 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+
+.container
+  table-layout: fixed
+  width: 100%
+  padding: 32px 0
+
+.item
+  padding-top: 8px
+  padding-bottom: 8px
+  border-right: 1px solid $gray-lighter
+
+  &:last-child
+    border-right: none
+
+  h3
+    margin: 2px 15px
+    color: #676a6c
+    height: 28px
+
+  p
+    margin: 0
+    font-weight: 400
+
+.icon
+  width: 32px
+  height: 32px
+  display: inline-block
+  background: no-repeat center
+
+.icon-date
+  background-image: url('./img/rocket-icon.svg')
+
+.icon-lessons
+  background-image: url('./img/lesson-icon.svg')
+
+.icon-groups
+  background-image: url('./img/calendar-icon.svg')
+
+.icon-level
+  background-image: url('./img/level-beginner.svg')

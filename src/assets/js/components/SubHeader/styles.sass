@@ -1,0 +1,31 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/size"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.subheader
+  margin-bottom: 50px
+  +box-shadow-default()
+
+  .navbar
+    border: none
+    margin-bottom: 0
+    background-color: #fff
+
+    a
+      border-bottom: 3px solid transparent
+      padding-left: 4px
+      padding-top: 17px
+      padding-bottom: 16px
+      padding-right: 4px
+      margin-right: 24px
+
+      +transition()
+      &.active
+        &, &:hover, &:focus, &:active
+          border-color: #347bd4
+
+      &:hover
+        border-color: #347bd4
+
+  .navbar-nav

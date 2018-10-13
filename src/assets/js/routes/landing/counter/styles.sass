@@ -1,0 +1,64 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.container
+  background-color: #3289f2
+
+  .map
+    padding-top: 90px
+    padding-bottom: 90px
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center center
+    background-image: url("./img/map.svg")
+    +responsive-media('xs')
+      padding-top: 20px
+      padding-bottom: 20px
+    +responsive-media('sm')
+      padding-top: 40px
+      padding-bottom: 40px
+
+  &, h2
+    color: #fff
+
+  h2
+    padding: 0
+    margin: 0
+    font-size: 36px
+    font-weight: 300
+    +responsive-media('xs')
+      font-size: 26px
+
+  .counter
+    margin-top: 30px
+    margin-bottom: 30px
+    +responsive-media('xs')
+      margin-top: 20px
+      margin-bottom: 20px
+
+    & > span
+      display: inline-block
+      min-width: 60px
+      font-size: 60px
+      font-weight: 300
+      line-height: 60px
+      color: #3289f2
+      background-color: #fff
+      padding: 5px 12px
+      margin-left: 2px
+      margin-right: 2px
+      +border-radius(5px)
+
+      +responsive-media('xs')
+        min-width: 36px
+        font-size: 40px
+        line-height: 40px
+        padding: 5px 6px
+        +border-radius(3px)
+
+      &.margin
+        margin-left: 10px
+
+      &:first-child
+        margin-left: 2px

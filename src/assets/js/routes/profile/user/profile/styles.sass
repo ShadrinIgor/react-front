@@ -1,0 +1,33 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/size"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.main
+  h2
+    margin-top: 8px
+
+.badge
+  text-align: center
+  padding-top: 8px
+  padding-bottom: 8px
+  & > div
+    display: inline-block
+    width: 80px
+    height: 80px
+    background-color: $gray-lighter
+    border-radius: 50%
+
+    +responsive-media('sm')
+      width: 100px
+      height: 100px
+
+    +responsive-media('lg')
+      width: 120px
+      height: 120px
+
+.badges
+  font-size: $font-size-h3
+  margin: 0 8px 8px
+  span
+    font-size: $font-size-h2

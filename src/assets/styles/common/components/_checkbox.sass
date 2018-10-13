@@ -1,0 +1,77 @@
+.checkbox
+
+  & > label
+    padding-left: 0
+
+  .icon
+    display: inline-block
+    margin-right: 12px
+    margin-bottom: 2px
+    border: solid 2px $gray-light
+
+    +transition()
+    +border-radius(3px)
+    +square(18px)
+    &:before
+      content: ''
+      display: inline-block
+      position: absolute
+      @extend .icon_24_checkbox_clicked
+      background-size: 22px 22px
+      background-position: center center
+      margin-left: -4px
+      margin-top: -4px
+      +transition()
+      +border-radius(2px)
+      +opacity(0)
+      +square(22px)
+
+  input[type="checkbox"]
+    position: absolute
+    opacity: 0
+
+    &:checked
+      & + .icon
+        border-color: #387dd1
+        &:before
+          +opacity(1)
+
+
+.radio-inline, .radio
+
+  padding-left: 0
+
+  & > label
+    cursor: pointer
+
+  .icon
+    display: inline-block
+    margin-right: 12px
+    margin-bottom: 1px
+    border: solid 1px $gray-light
+    +transition()
+    +border-radius(50%)
+    +square(18px)
+
+    &:before
+      content: ''
+      display: inline-block
+      position: absolute
+      background-color: #387dd1
+      margin-left: 3px
+      margin-top: 3px
+      +opacity(0)
+      +transition()
+      +square(10px)
+      +border-radius(50%)
+
+  input[type="radio"]
+    position: absolute
+    opacity: 0
+
+    &:checked
+      & + .icon
+        &:before
+          +opacity(1)
+
+

@@ -1,0 +1,14 @@
+div(class=styles['container-speech-recognition'])
+    .container-table.text-center
+        .container-table-cell
+            .container
+                .col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3
+                    form(method="post")
+                        .form-group
+                            div(class=styles.mic)
+                                div(class=styles['mic-icon'])
+                                div(class=styles['mic-sound'])
+                        .form-group: h2(class=styles.message) Говорите
+                        .form-group(class=styles['form-group-submit'])
+                            button(type="submit" class=styles['btn-light']).btn.hidden Repeat once again...
+    div.btn-close(class=styles['btn-close'])

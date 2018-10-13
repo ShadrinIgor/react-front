@@ -1,0 +1,26 @@
+
+.markdown
+  h1, h2, h3, h4, h5
+    display: block
+    margin-top: 0
+
+  ul
+    list-style: none inside
+    padding: 0
+    li
+      padding-left: 30px
+      &:before
+        content: ''
+        position: absolute
+        display: block
+        width: 5px
+        height: 5px
+        border-radius: 50%
+        background-color: rgba(#000, .6)
+        margin-left: -28px
+        margin-top: 9px
+
+  p
+    margin-bottom: 20px
+    & + h1, & + h2, & + h3, & + h4
+      margin-top: 50px

@@ -1,0 +1,46 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/size"
+@import "../../../../styles/bootstrap/variables"
+@import "../../../../styles/common/mixins"
+
+.intro
+  background-color: #fff
+  padding-top: 50px
+  padding-bottom: 50px
+
+  +responsive-media('xs')
+    padding-top: 25px
+    padding-bottom: 25px
+
+.container
+
+  h2
+    padding: 0
+    margin: 0 0 28px
+    font-size: 30px
+    font-weight: 300
+    color: #267fee
+    line-height: 38px
+    +responsive-media('xs')
+      font-size: 24px
+      line-height: 28px
+      margin: 0 0 21px
+
+  .cover
+    display: inline-block
+    border-radius: 50%
+    width: 115px
+    height: 115px
+    margin: 15px 0
+    background-repeat: no-repeat
+    background-position: center center
+
+    +responsive-media('md')
+      margin: 25px 0
+
+    +responsive-media('lg')
+      margin: 25px 0
+
+    @for $i from 1 through 4
+      &[data-bg="#{$i}"]
+        background-image: url("./img/intro_#{$i}.svg")

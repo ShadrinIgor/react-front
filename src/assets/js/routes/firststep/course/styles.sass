@@ -1,0 +1,56 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.header
+  margin-top: 40px
+  margin-bottom: 24px
+  text-align: center
+
+  h3
+    margin-top: 0
+    margin-bottom: 16px
+
+  +responsive-media('md')
+    text-align: left
+
+    h3
+      margin-top: 8px
+      margin-bottom: 0
+
+    a:global(.btn)
+      float: right
+
+.cover
+  height: 132px
+  background-position: center
+  background-repeat: no-repeat
+
+.course
+  text-align: center
+  &, &:hover, &:focus, &:active
+    text-decoration: none
+
+  p
+    color: rgba($text-color, .6)
+
+  +responsive-media('md')
+    div:global(.panel-body)
+      height: 352px
+
+    h4
+      margin-top: 24px
+      margin-bottom: 48px
+
+  &.individual
+    .cover
+      background-image: url("./img/individual.svg")
+
+  &.group
+    .cover
+      background-image: url("./img/group.svg")
+
+  &.teacher
+    .cover
+      background-image: url("./img/teacher.svg")
+

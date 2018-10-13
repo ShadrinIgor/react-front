@@ -1,0 +1,68 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/size"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.panel
+  border: none
+  border-radius: 3px
+  +transition()
+  +box-shadow-default()
+  & > a
+    &, &:hover, &:focus, &:active
+      text-decoration: none
+
+.heading
+  border-bottom: 1px solid $gray-lighter
+  padding: 21px
+  h3
+    margin-top: 0
+    margin-bottom: 0
+
+.body
+  padding: 21px
+
+.footer
+  background-color: #fff
+  border-top: 1px solid $gray-lighter
+
+.panel-page
+  margin-bottom: 50px
+
+  .heading, .body, .footer
+    padding-left: 90px
+    padding-right: 90px
+
+.panel-container
+  border: none
+  .body
+    padding: 0
+
+.panel-item
+  margin-bottom: 8px
+
+  .heading, .body, .footer
+    padding: 16px 21px
+    vertical-align: middle
+
+  &:hover, &:focus
+    +box-shadow-default('hover')
+
+  &:active
+    +box-shadow-default()
+
+.close
+  display: block
+  width: 32px
+  height: 32px
+  position: absolute
+  right: 16px
+  top: 8px
+  background-position: center
+  background-repeat: no-repeat
+  background-image: url("./img/close.svg")
+  cursor: pointer
+  +transition()
+
+  &:active
+    opacity: .5

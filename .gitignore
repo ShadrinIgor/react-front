@@ -1,0 +1,10 @@
+.idea
+.DS_Store
+npm-debug.log
+stats.json
+config.yaml
+/node_modules/
+/coverage/
+**/build*/
+/.jshintignore
+/.jshintrc

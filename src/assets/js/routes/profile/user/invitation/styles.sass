@@ -1,0 +1,61 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/size"
+@import "../../../../../styles/bootstrap/variables"
+@import "../../../../../styles/common/mixins"
+
+.main
+
+  h4, h5
+    margin-top: 0
+
+.socials
+  padding-top: 24px
+  text-align: center
+
+  +responsive-media('md')
+    text-align: left
+
+.cover
+  background: url("./img/cover.svg") no-repeat center center
+  background-size: contain
+  min-height: 140px
+
+  +responsive-media('md')
+    background-position: center right
+
+.status
+  .note
+    margin-bottom: 16px
+
+.list-item
+  display: table
+  table-layout: fixed
+  width: 100%
+  text-align: left
+
+  & > div
+    display: table-cell
+    vertical-align: middle
+
+  & :global(.btn)
+    margin-bottom: 0
+
+  .avatar
+    width: 90px
+
+  .actions
+    text-align: right
+    width: 30%
+
+.icon
+  width: 22px
+  height: 22px
+  background-repeat: no-repeat
+  background-position: center center
+  display: inline-block
+  vertical-align: text-bottom
+  margin-left: 8px
+  margin-right: 8px
+
+  &.icon-yes
+    background-image: url("./img/icon-check-large.png")

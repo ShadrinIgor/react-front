@@ -1,0 +1,101 @@
+.select2-selection--single
+  background-color: #fff
+  height: 42px
+
+  border: 1px solid $border-color
+  border-radius: $border-radius
+  outline: 0
+
+  &:focus
+    border: 1px solid $focus-border-color
+
+  .select2-selection__rendered
+    color: #444
+    line-height: 30px
+    padding: 6px 12px
+ 
+
+  .select2-selection__clear
+    cursor: pointer
+    float: right
+    font-weight: bold
+    margin-right: 10px
+ 
+
+  .select2-selection__placeholder
+    color: #999
+    padding: 6px 0
+ 
+
+  .select2-selection__arrow
+    border: none
+    border-top-right-radius: $border-radius
+    border-bottom-right-radius: $border-radius
+
+    height: 40px
+    position: absolute
+    top: 1px
+    right: 1px
+    width: 36px
+
+    b
+      width: 0
+      height: 0
+      border: 8px solid transparent
+      border-bottom-color: #999999
+      position: absolute
+      right: 15px
+      top: 3px
+      &:after
+        content: ''
+        position: absolute
+        z-index: 1
+        left: -7px
+        top: 8px
+        width: 0
+        height: 0
+        border: 7px solid transparent
+        border-top-color: #999999
+      &:before
+        content: ''
+        z-index: 2
+        position: absolute
+        left: -12px
+        top: 0
+        width: 0
+        height: 0
+        border: 12px solid transparent
+        border-top-color: #fff
+
+
+&.select2-container--open
+  +box-shadow-default('dropdown')
+  .select2-selection--single
+    border-color: $focus-border-color
+    position: relative
+    z-index: 10000
+
+    .select2-selection__rendered
+      color: #444
+      line-height: 30px
+      padding: 6px 12px
+
+    .select2-selection__arrow
+      background: transparent
+
+      b
+        top: 8px
+        &:before
+          top: 3px
+          border-bottom-color: #fff
+          border-top: none
+
+  &.select2-container--above
+    .select2-selection--single
+      border-top-left-radius: 0
+      border-top-right-radius: 0
+
+  &.select2-container--below
+    .select2-selection--single
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0

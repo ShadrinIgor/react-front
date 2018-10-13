@@ -1,0 +1,55 @@
+.container-loading
+  position: absolute
+  left: 0
+  bottom: 0
+  top: 0
+  right: 0
+
+.container-loading-overlay, .container-loading-content
+  position: absolute
+  width: 100%
+  height: 100%
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index: $zindex-modal
+
+.container-loading-overlay
+  background: $gray-light
+  +opacity(.5)
+
+.container-loading-overlay-clear
+  background: none
+
+.container-loading-content
+  display: table
+  text-align: center
+
+.container-loading-content-box
+  display: table-cell
+  vertical-align: middle
+
+.container-loading-animation
+  display: inline-block
+  background-position: center center
+  background-repeat: no-repeat
+
+
+.spinner-circle
+  background-color: #fff
+  background-image: url("../img/preloaders/circle_large.gif")
+  border-radius: 50%
+  display: inline-block
+
+.spinner-circle-lg
+  background-size: 50px 50px
+  +square(50px)
+
+.spinner-circle-sm
+  background-size: 30px 30px
+  +square(30px)
+
+.spinner-circle-xs
+  background-size: 20px 20px
+  +square(20px)

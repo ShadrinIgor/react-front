@@ -1,0 +1,209 @@
+.container-list-header
+  display: table
+  width: 100%
+  text-align: center
+  margin-bottom: $padding-large-vertical
+  & > div
+    display: table-cell
+    vertical-align: middle
+
+  .cover, .title
+    display: inline-block
+
+  .title
+    max-width: 420px
+    +text-overflow()
+
+  .cover
+    background-color: #e6e6e6
+    vertical-align: middle
+    margin-right: $padding-base-horizontal
+    +border-radius(50%)
+    +square(30px)
+
+  .separator
+    width: 50%
+    &:before
+      content: ' '
+      display: block
+      background-color: #e6e6e6
+      height: 2px
+      width: 100%
+
+  .content
+    white-space: nowrap
+    padding-left: $padding-base-horizontal * 2
+    padding-right: $padding-base-horizontal * 2
+
+.container-list-items
+  margin-bottom: $padding-large-vertical * 3
+
+.list-item
+  margin-bottom: 10px
+  cursor: pointer
+  &:hover
+    .list-item-content
+      +box-shadow-default(hover)
+
+  /**&:active, &.active
+    .list-item-content
+      +box-shadow(none)**/
+
+  &[data-view=""], &[data-action="done"]
+    cursor: default
+
+    &:hover
+      .list-item-content
+        +box-shadow-default()
+
+  &[data-view="delete"]
+    &:hover
+      .icon_24_close_normal
+        @extend .icon_24_close_hover
+
+  &[data-view="simple"], &[data-action="add"]
+    &:hover
+      .icon_24_plus_normal
+        @extend .icon_24_plus_hover
+
+  &[data-action="checkbox"]
+    &:hover
+      .icon_24_checkbox_normal
+        @extend .icon_24_checkbox_hover
+
+.list-item-content
+  display: table
+  width: 100%
+  height: 80px
+  background-color: #fff
+  +transition()
+  +border-radius($border-radius-large)
+  +box-shadow-default()
+
+  @media (max-width: $screen-xs-max)
+    height: 60px
+
+.list-item-section
+  display: table-cell
+  vertical-align: middle
+
+  &.content
+    text-align: left
+    padding: 10px 30px
+    line-height: 110%
+
+    @media (max-width: $screen-xs-max)
+      padding: 5px 15px
+
+  &.cover
+    padding-left: 25px
+    width: 78px
+
+    .img
+      background: no-repeat center
+      background-color: #dadada
+      background-size: cover
+      +transition(backbround-color)
+      +border-radius(50%)
+      +square(58px)
+    .icon-action
+      margin-top: 16px
+    .icon-status
+      position: absolute
+      background-color: #fff
+      margin-left: 12px
+      margin-top: -6px
+      +background-size(16px)
+      +border-radius(50%)
+
+    @media (max-width: $screen-xs-max)
+      width: 48px
+      padding-left: 10px
+      .img
+        +square(38px)
+      .icon-action
+        margin-top: 7px
+
+  &.action
+    text-align: left
+    width: 45px
+
+.list-item-shadow
+  position: relative
+  z-index: -1
+  margin-top: -3px
+  background-color: #fff
+  height: 7px
+  +border-bottom-radius($border-radius-large)
+  +box-shadow-default()
+
+.list-item
+  +transition(all, .2s)
+  .list-item-content
+    +transition(all, .2s)
+    .img
+      +transition(all, .2s)
+
+  &[data-view=simple]
+    .list-item-content
+      background: none
+      +box-shadow(none)
+      border: solid 2px #cdcdcd
+    &:hover
+      .list-item-content
+        background-color: #ebebeb
+        .img
+          background-color: #cccccc
+
+  &[data-view="simple"]
+    animation: fadein ease-in .35s 
+
+
+
+
+
+.list-sidebar
+  .hr
+    margin-top: 10px
+    margin-bottom: 10px
+  .panel-body
+    padding: 10px 0
+  .list-group
+    margin: 0
+  .list-group-item
+    border: none
+    +border-radius(0)
+
+
+.list-group
+  margin: 0
+  border: none
+
+.list-group-item
+  border: none
+  margin: 0
+  padding: 0
+  +transition()
+
+  a
+    display: block
+    padding: 10px 15px
+    text-decoration: none
+    color: $text-color
+    +transition()
+
+    &.active
+      color: #fff
+      background-color: #3289f2
+
+  &:first-child
+    a
+      border-top-left-radius: 3px
+      border-top-right-radius: 3px
+  &:last-child
+    a
+      border-bottom-left-radius: 3px
+      border-bottom-right-radius: 3px
+
+  &:hover, &:focus
+    background-color: #f5f5f5

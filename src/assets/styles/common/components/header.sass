@@ -1,0 +1,165 @@
+.header
+  .navbar-default
+    border: none
+  .nav
+    > li
+      > a
+        padding-top: 17px
+        height: 55px
+        +transition('color, background-color, border')
+        & > .icon
+          margin-left: -12px
+          margin-right: 7px
+
+        @media (min-width: $screen-lg-min)
+          padding-left: 28px
+          padding-right: 28px
+
+  .navbar-brand
+    background-repeat: no-repeat
+    background-position: center center
+    margin-left: -8px
+    background-image: url("../img/misc/logo.svg")
+    +background-size(87px, 27px)
+    +size(115px, 55px)
+
+
+#navbar-main
+  margin-bottom: 0
+  &.navbar-default
+    background-color: $brand-primary
+  .navbar-left
+    text-transform: uppercase
+    @media (min-width: $screen-sm-min)
+      float: none!important
+      display: inline-block
+      margin-bottom: -5px
+    &, li > a, li > a:active, li > a:focus
+      color: #fff
+
+  .nav
+    > li
+      &.active, &:hover, &:active, &:focus, &.open
+        > a, > a:hover, > a:focus, > a:active
+          background: #2469bf
+          color: #fff
+
+  .dropdown
+    .caret-sm
+      top: 13px
+      border-bottom-color: #fff
+      &:after
+        border-top-color: #fff
+      &:before
+        border-top-color: $brand-primary
+
+    &:hover
+      .caret-sm
+        &:before
+          border-top-color: #2469bf
+
+
+    &.open
+      +box-shadow(none)
+      .caret-sm
+        top: 17px
+        &:before
+          border-bottom-color: #2469bf
+
+    @media (min-width: $screen-sm-min)
+      margin-right: -15px
+
+  .dropdown-user
+    > a
+      padding-top: 10px
+      color: #fff
+    .avatar
+      vertical-align: middle
+      margin-right: 15px
+      +square(34px)
+
+    .username
+      max-width: 220px
+      display: inline-block
+      vertical-align: middle
+      margin-right: 15px
+      +text-overflow()
+      @media (min-width: $screen-sm-min)
+        max-width: 120px
+    .dropdown-menu
+      margin-top: 1px
+
+
+  .in
+    .dropdown-user
+      &.open
+        a
+          color: #fff
+
+  @media (min-width: $screen-sm-min)
+    text-align: center
+    .navbar-brand
+      margin-left: -15px
+
+
+.navbar-default
+  .navbar-toggle
+    margin-top: 12px
+    border: none
+    +transition()
+    +opacity(.6)
+    &:hover, &:focus
+      background-color: transparent
+      +opacity(1)
+    .icon-bar
+      background-color: #fff
+      width: 20px
+      +transition()
+
+    .icon-bar-1
+      transform: translate(0, 6px) rotate(45deg)
+    .icon-bar-2
+      +opacity(0)
+    .icon-bar-3
+      transform: translate(0, -6px) rotate(-45deg)
+
+    &.collapsed
+      .icon-bar-1, .icon-bar-3
+        transform: translate(0, 0) rotate(0deg)
+      .icon-bar-2
+        +opacity(1)
+
+
+#container-header-sub
+  display: none
+  & > .navbar
+    +box-shadow(0 1px 3px rgba(0,0,0, .1))
+    &.navbar-default
+      background-color: #fff
+
+    .nav
+      > li
+        > a
+          border-bottom: 3px solid #fff
+        &.active, &:hover, &:active, &:focus, &.open
+          > a, > a:hover, > a:focus, > a:active
+            background: #fff
+            border-bottom-color: $brand-primary-darken
+
+  .navbar
+    overflow: hidden
+    margin-bottom: 0
+    & > .container
+      overflow-x: auto
+  .nav.navbar-nav
+    white-space: nowrap
+    margin-bottom: 0
+    & > li
+      display: inline-block
+
+#navbar-main-sub
+  display: block!important
+  & > .navbar.navbar-default
+    margin-bottom: 0
+  #container-content
+      margin-top: -30px

@@ -1,0 +1,3 @@
+export const WEBINAR_STATUS_PLANNED = 1;
+export const WEBINAR_STATUS_IN_PROGRESS = 2;
+export const WEBINAR_STATUS_MOVED = 3;

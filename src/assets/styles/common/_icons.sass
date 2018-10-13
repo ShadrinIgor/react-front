@@ -1,0 +1,69 @@
+$icons-24: mail_dark mail_white checkbox_normal checkbox_hover checkbox_clicked checkbox_blocked reload reload_hover close_large close_large_hover arrow_down_white form_control_error form_control_done plus_white_normal search like like_clicked like_hover dislike dislike_clicked dislike_hover repeat done_white done_gray done_blocked arrow_right close_hover edit_clicked muted_clicked play_clicked share_clicked arrow_right_hover close_normal edit_hover muted_hover play_hover share_hover back continue_blocked edit_normal muted_normal play_normal share_normal back_active continue_clicked info_blocked next_blocked plus_blocked back_disabled continue_hover info_clicked next_clicked plus_clicked back_hover continue_normal info_hover next_hover plus_hover checkbox_blocked done info_normal next_normal plus_normal checkbox_clicked dropdown_blocked mute_blocked pause_blocked previous_blocked checkbox_hover dropdown_clicked mute_clicked pause_clicked previous_clicked checkbox_normal dropdown_hover mute_hover pause_hover previous_hover close_blocked dropdown_normal mute_normal pause_normal previous_normal close_clicked edit_blocked muted_blocked play_blocked share_blocked
+$icons-32: arrow_left arrow_right enter media_audio media_text media_video spacebar dashboard_play dashboard_pause
+
+.icon
+  display: inline-block
+  vertical-align: middle
+  background-repeat: no-repeat
+  background-position: center center
+  padding: 0
+  margin: 0
+  +transition(background-image)
+
+.icon_24
+  +square(24px)
+
+.icon_32
+  +square(32px)
+
+.vjs-icon-*
+  background-repeat: no-repeat
+  background-size: 24px 24px
+
++images-list-builder('icon_24_', $icons-24, '../img/icons/24')
++images-list-builder('icon_32_', $icons-32, '../img/icons/32')
+
+.icon + span
+  margin-left: 10px
+
+span + .icon
+  margin-left: 10px
+
+.icon_24_form_control_clear
+  @extend .icon_24_close_normal
+
+.container-icon
+  display: inline-block
+
+  &.container-icon-checkbox
+    &:hover
+      .icon
+        &.icon_24_checkbox_normal
+          @extend .icon_24_checkbox_hover
+    &.active
+      &, &:hover
+        .icon
+          &.icon_24_checkbox_normal
+            @extend .icon_24_checkbox_clicked
+
+  &.container-icon-add
+    &:hover
+      .icon
+        &.icon_24_plus_normal
+          @extend .icon_24_plus_hover
+    &.active
+      &, &:hover
+        .icon
+          &.icon_24_plus_normal
+            @extend .icon_24_plus_clicked
+
+  &.container-icon-delete
+    &:hover
+      .icon
+        &.icon_24_close_normal
+          @extend .icon_24_close_hover
+    &.active
+      &, &:hover
+        .icon
+          &.icon_24_close_normal
+            @extend .icon_24_close_clicked

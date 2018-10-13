@@ -1,0 +1,120 @@
+$toast-width: 385px
+
+.container-toasts
+  position: fixed
+  top: 0
+  right: 0
+  padding-top: $padding-base-vertical
+  padding-right: $padding-base-horizontal
+  padding-left: $padding-base-horizontal
+  z-index: $zindex-modal + 10
+
+.container-toast
+  overflow: hidden
+  position: relative
+  right: 0
+  margin-bottom: $padding-base-vertical
+  animation-name: toast-show
+  animation-duration: .15s
+  animation-timing-function: ease-out
+  +transition(all)
+  +border-radius(3px)
+  +box-shadow-default()
+
+  &.hide-toast
+    animation-name: toast-hide
+    animation-duration: .5s
+    animation-timing-function: ease-in
+    right: -$toast-width
+    height: 0
+    margin-bottom: 0
+    +opacity(0)
+
+.container-toast-table
+  width: $toast-width
+  background-color: #fff
+  font-size: 16px
+  color: #4c4c4c
+  display: table
+  table-layout: fixed
+
+  +responsive-media('xs')
+    width: 100%
+
+  & > div
+    display: table-cell
+    vertical-align: top
+
+  .level
+    width: 5px
+    background-color: #347bd4
+    +border-left-radius(2px)
+
+  .photo
+    padding: 16px 0 14px 20px
+    width: 70px
+    .avatar
+      margin-left: -5px
+      +square(58px)
+
+  .content
+    padding: 16px 20px
+    .title
+      font-weight: 400
+      color: #347bd4
+
+  .actions
+    width: 45px
+    padding: 10px
+    text-align: center
+    .icon_24_close_normal
+      cursor: pointer
+
+  .action
+    padding-top: 8px
+    margin-bottom: -8px
+
+  &[data-level=error]
+    .level
+      background-color: #d92828
+    .content
+      .title
+        color: #d92828
+
+  &[data-level=success]
+    .level
+      background-color: #7aaf08
+    .content
+      .title
+        color: #7aaf08
+
+  &[data-level=warning]
+    .level
+      background-color: #e3a000
+    .content
+      .title
+        color: #e3a000
+
+@keyframes toast-hide
+  0%
+    right: 0
+    height: auto
+    margin-bottom: $padding-base-vertical
+    +opacity(1)
+  50%
+    right: -$toast-width
+    height: auto
+    margin-bottom: $padding-base-vertical
+    +opacity(0)
+  100%
+    right: -$toast-width
+    height: 0
+    +opacity(0)
+
+@keyframes toast-show
+  0%
+    right: -$toast-width
+    +opacity(0)
+  100%
+    right: 0
+    +opacity(1)

@@ -1,0 +1,129 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/size"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/text-overflow"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.header
+
+  .navbar
+    border: none
+    margin: 0
+    font-weight: 400
+    height: 58px
+    +transition()
+    &:last-child
+      +box-shadow-default()
+
+  .navbar-brand
+    background: url("./img/logo.svg") no-repeat center center
+    background-size: 87px, 27px
+    width: 116px
+    height: 56px
+    margin-left: 4px
+
+  .navbar-default
+    box-shadow: none
+    border-radius: 0
+    background-color: #377DD3
+
+    div:global(.navbar-collapse)
+      text-align: center
+
+    .navbar-left, .navbar-right, .navbar-center
+      a
+        color: #fff
+        line-height: 180%
+        padding-top: 16px
+        padding-left: 18px
+        padding-right: 18px
+        +transition()
+
+        +responsive-media('md')
+          padding-left: 28px
+          padding-right: 28px
+
+        &.active, &:hover, &:focus, &:active
+          color: #fff
+
+    .navbar-center
+      a
+        min-height: 55px
+
+        &.active, &:hover, &:focus, &:active
+          background-color: #2469bf
+
+    .navbar-right
+      .btn-default
+        background-color: #fff
+        color: #000
+        text-transform: uppercase
+        min-height: initial
+        padding-top: 6px
+        padding-bottom: 6px
+        border-radius: 3px
+        margin-top: 8px
+        border: none
+
+        &:hover, &:focus
+          color: #3289f2
+          opacity: 1
+          background-color: rgba(#fff, .9)
+
+        +responsive-media('sm')
+          margin-left: 32px
+
+  .navbar-toggle
+    margin-top: 12px
+    margin-right: 8px
+    border: none
+    +transition()
+    +opacity(.6)
+    &:hover, &:focus
+      background-color: transparent
+      +opacity(1)
+
+    .icon-bar
+      background: #fff
+      width: 20px
+      +transition()
+
+    a.open
+      &, &:hover, &:focus, &:active
+        background-color: red
+        opacity: .5
+
+  .dropdown-user
+    [data-toggle='dropdown']
+      line-height: 30px
+    > a[role=button]
+      padding-top: 13px
+      padding-bottom: 13px
+      color: #fff
+      +transition()
+      &:hover, &:focus, &:active
+        background-color: #2469bf
+
+    .avatar
+      vertical-align: middle
+      margin-right: 15px
+      +transition()
+
+    .username
+      max-width: 220px
+      display: inline-block
+      vertical-align: middle
+      margin-right: 15px
+      margin-top: 2px
+      color: #fff
+      +text-overflow()
+      @media (min-width: $screen-sm-min)
+        max-width: 120px
+
+    &.open
+      &, &:hover, &:focus, &:active
+        > a[role=button]
+          background-color: #2469bf
+
+    .dropdown-toggle
+      background: none

@@ -1,0 +1,59 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "../../../styles/bootstrap/bootstrap"
+
+#container-statusbar
+  overflow: hidden
+  height: 55px
+
+.statusbar
+  position: relative
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: $zindex-navbar
+  background-color: #40515e
+  height: 55px
+  color: #fff
+
+  .progress
+    background-color: #243949
+    +border-radius(4px)
+
+  .progress-bar-header
+    margin-top: 5px
+    font-size: 13px
+    height: 18px
+    padding-left: 16px
+
+  .progress-bar
+    text-align: left
+    padding-left: 0
+    padding-right: 0
+
+    span
+      padding-left: $padding-large-horizontal
+      padding-right: $padding-large-horizontal
+      +text-overflow()
+
+  .btn
+    margin-top: 10px
+    display: block
+
+  .avatar
+    position: absolute
+    background-color: #347bd4
+    margin-top: 3px
+    margin-left: -43px
+    background-size: cover
+    background-position: center center
+    +box-shadow(-1px 0 5px rgba(#000, .2))
+    +border-radius(50%)
+    +square(50px)
+
+  .progress-bar-level
+    padding-left: 60px
+    .progress-bar-header
+      padding-left: 16px
+
+.progress, .progress-bar
+  +box-shadow(none)

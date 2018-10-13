@@ -1,0 +1,72 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/size"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.container-avatar
+  text-align: center
+  display: inline-block
+  float: left
+
+.avatar
+  display: inline-block
+  background-color: $gray-lighter
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  +border-radius(50%)
+  +square(34px)
+  +transition()
+
+.spinner
+  position: absolute
+  background-color: rgba(#fff, .8)
+  border-radius: 50%
+  padding-top: 8px
+
+// const UNKNOWN   = 0;
+// const MALE      = 1;
+// const FEMALE    = 2;
+
+.sex-0
+  background-image: url("./img/unknown.svg")
+
+.sex-1
+  background-image: url("./img/man.svg")
+
+.sex-2
+  background-image: url("./img/woman.svg")
+
+.size-xsm
+  +square(48px)
+
+  .avatar, .spinner
+    +square(48px)
+
+  .badge
+    margin-top: -24px
+
+.size-md
+  +square(60px)
+
+  .avatar, .spinner
+    +square(60px)
+
+  .badge
+    margin-top: -24px
+
+.size-lg
+  +square(90px)
+
+  .avatar, .spinner
+    +square(90px)
+
+  .badge
+    margin-top: -16px
+
+    & > div:global(.badge)
+      &:global(.badge-sm)
+        +border-radius(3px)
+      &:global(.badge-lg)
+        +border-radius(5px)
+

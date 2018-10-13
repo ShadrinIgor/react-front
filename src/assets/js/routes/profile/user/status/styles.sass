@@ -1,0 +1,134 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/size"
+@import "../../../../../styles/bootstrap/variables"
+@import "../../../../../styles/common/mixins"
+
+.container-status
+  .panel-right, .panel-left
+    +responsive-media('md')
+      min-height: 229px
+    h3
+      margin-top: 0
+
+  .panel-right
+    background-image: url("./img/main-vip-bg.png")
+    background-repeat: no-repeat
+    background-position: right center
+    border-radius: 4px
+
+.container-currency
+  .icon-currency
+    background-image: url("./img/usd.png")
+    background-repeat: no-repeat
+    background-position: center center
+    width: 65px
+    height: 35px
+    display: inline-block
+    vertical-align: middle
+    line-height: 10%
+    margin-right: 10px
+
+.container-compare
+  .table
+    margin-bottom: 0
+    tr
+      th
+        border: none
+        padding: 13px 20px
+
+    thead
+      tr
+        th
+          font-weight: 500
+          font-size: 18px
+
+    tbody
+      tr
+        th
+          font-weight: 400
+
+  .icon
+    width: 22px
+    height: 22px
+    background-repeat: no-repeat
+    background-position: center center
+    display: inline-block
+
+  .icon-yes
+    background-image: url("./img/icon-check-large.png")
+
+  .icon-no
+    background-image: url("./img/icon-delete-large.png")
+
+.container-prices
+  .panel
+    min-height: 250px
+    margin-top: 20px
+
+  .container-badge
+    height: 30px
+
+  h3
+    font-size: 24px
+
+  .title
+    font-weight: 400
+    max-width: 120px
+    margin: 22px auto 11px
+
+  .price
+    font-weight: 600
+    margin-top: 14px
+    margin-bottom: 0
+
+  a
+    min-width: 200px
+    margin-top: 30px
+
+  .panel-lg
+    margin-top: 0
+    min-height: 290px
+
+    .title
+      margin-top: 40px
+
+    a
+      margin-top: 40px
+
+.container-payment
+  a, ul
+    display: inline-block
+    vertical-align: middle
+    margin-bottom: 0
+
+  ul
+    margin-right: 0
+    line-height: 10%
+
+    +responsive-media('sm')
+      margin-right: 30px
+    +responsive-media('md')
+      margin-right: 60px
+
+  li
+    margin-left: 8px
+    margin-right: 8px
+
+  .icon
+    width: 50px
+    height: 30px
+    background-repeat: no-repeat
+    background-position: center center
+
+  .icon-verisign
+    background-image: url("./img/verisign-small.png")
+    width: 70px
+
+  .icon-alipay
+    background-image: url("./img/alipay-small.png")
+
+  .icon-visa
+    background-image: url("./img/visa-small.png")
+
+  .icon-unionpay
+    background-image: url("./img/unionpay-small.png")

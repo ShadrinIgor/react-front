@@ -1,0 +1,87 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.container
+  & > :global(.panel-heading)
+    padding-top: 24px
+    padding-bottom: 24px
+
+  & > :global(.panel-footer)
+    padding-top: 20px
+    padding-bottom: 20px
+
+.error
+  padding: 32px
+
+.panel
+  margin-bottom: 0
+  border-radius: 0
+  border: none
+  border-bottom: 1px solid $gray-lighter
+  &:last-child
+    border-bottom: none
+
+.heading
+  margin: 0
+  a
+    display: block
+    padding: 18px 36px
+    text-decoration: none
+    color: #000
+
+    .marker
+      float: left
+      display: block
+      border: 1px solid $gray-light
+      width: 18px
+      height: 18px
+      border-radius: 50%
+      background-color: #fff
+      margin-right: 16px
+      margin-top: -1px
+
+      &:after
+        content: ""
+        display: block
+        background-color: #3289f2
+        width: 10px
+        height: 10px
+        border-radius: 50%
+        margin-top: 3px
+        margin-left: 3px
+        opacity: 0
+        +transition()
+
+    .icon
+      width: 100px
+      height: 28px
+      float: right
+      background-repeat: no-repeat
+      background-position: center right
+
+      &.alipay
+        background-image: url("./img/logo-alipay.svg")
+
+      &.wechat
+        background-image: url("./img/logo-wechat.svg")
+
+    &[aria-expanded=true]
+      .marker
+        &:after
+          opacity: 1
+
+
+div:global(.panel-collapse)
+  .content
+    padding: 0 36px 18px 70px
+    opacity: 0
+    +transition()
+
+    div:global(.small)
+      margin-bottom: 8px
+
+  &[aria-expanded=true]
+    .content
+      opacity: 1
+

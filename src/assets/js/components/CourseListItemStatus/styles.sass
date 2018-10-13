@@ -1,0 +1,25 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+@mixin icon()
+  display: inline-block
+  width: 24px
+  height: 24px
+  vertical-align: middle
+  margin-right: 7px
+  color: #727272
+  background-position: center center
+  background-repeat: no-repeat
+
+.iconStartCourse
+  @include icon()
+  background-image: url('./img/start-course.svg')
+
+.iconFinishedCourse
+  @include icon()
+  background-image: url('./img/finished-course.svg')
+
+.iconEnrolledCourse
+  @include icon()
+  background-image: url('./img/done-normal.svg')

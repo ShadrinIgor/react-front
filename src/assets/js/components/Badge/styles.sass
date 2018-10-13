@@ -1,0 +1,52 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+
+.ribbon
+  height: 40px
+  display: inline-block
+  background-color: $brand-warning
+  color: #704200
+  font-size: 14px
+  font-weight: 400
+
+  &:before, &:after
+    content: ""
+    display: inline-block
+    height: 40px
+    width: 10px
+    background-repeat: no-repeat
+    position: absolute
+    padding: 0
+
+  .content
+    padding: 11px 16px
+
+  &.left
+    float: right
+    &:before
+      background-image: url("./img/left.svg")
+      background-position: left center
+      margin-left: -10px
+
+  &.right
+    float: left
+    &:after
+      position: absolute
+      right: -10px
+      top: 0
+      background-image: url("./img/right.svg")
+      background-position: right center
+
+.currency
+  display: inline-block
+  width: 20px
+  height: 20px
+  border-radius: 50%
+  vertical-align: text-top
+  background-color: $brand-warning
+  background-repeat: no-repeat
+  background-position: center
+
+  &.rmb
+    background-image: url("./img/rmb.svg")
+

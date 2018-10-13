@@ -1,0 +1,28 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.navbar
+  width: 100%
+  position: absolute
+  top: 16px
+  z-index: $zindex-navbar
+
+.close
+  margin-top: 12px
+  margin-right: 8px
+  width: 24px
+  height: 24px
+  display: inline-block
+  float: right
+  cursor: pointer
+  background-repeat: no-repeat
+  background-position: center
+  background-image: url("./img/close.svg")
+  +transition()
+
+  &:hover, &:focus
+    opacity: 1
+
+  &, &:active
+    opacity: .5

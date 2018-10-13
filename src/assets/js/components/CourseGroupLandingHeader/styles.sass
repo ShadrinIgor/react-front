@@ -1,0 +1,79 @@
+@import "~compass-sass-mixins/lib/compass"
+
+@mixin enrolledButton()
+  color: #999999
+  background-color: #f3f3f3
+
+.container
+  min-height: 256px
+  padding:
+    bottom: 31px
+    top: 29px
+
+  background:
+    position: center center
+    size: cover
+    color: #45556D
+
+  &, h1
+    color: #fff
+
+  h1
+    margin-top: 0
+    margin-bottom: 0
+
+  h4
+    margin-top: 8px
+    color: #fff
+    opacity: .5
+    text-transform: capitalize
+
+.content
+  min-height: 72px
+  margin-top: 32px
+
+.actions
+  margin-top: 24px
+
+  a:global(.btn)
+    margin-right: 16px
+    padding: 8px 16px
+
+  span
+    &:global(.icon_24_done_gray)
+      background-size: 18px 18px
+      margin-left: 0
+      margin-right: 4px
+
+.back
+  a
+    text-decoration: none
+    background: url('./img/back.svg') no-repeat left center
+    padding-left: 30px
+    padding-top: 2px
+    span
+      color: #fff
+      opacity: .5
+      font-size: 20px
+
+.icon-mail
+  width: 16px
+  height: 12px
+  margin-top: -1px
+  margin-right: 9px
+  +transition()
+
+.mail
+  &:hover, &:focus
+    .icon-mail
+      background-image: url('./img/mail_dark.svg')
+
+.enrolledButton
+  +enrolledButton()
+  cursor: default
+  &:hover, &:active, &:active:hover
+    +enrolledButton()
+  span:global(.icon)
+    background-size: 24px
+    margin-right: 16px
+    margin-top: -3px

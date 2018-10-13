@@ -1,0 +1,21 @@
+appStoreAppID: 1046826740
+
+devServer:
+  host: '0.0.0.0'
+  port: 9999
+
+development:
+  clientId: 4
+  clientSecret: 'd41d8cd98f00b204e9800998ecf8427e'
+  serverURL: '//s1.dev.gaozhiyuan.com'
+  apiURL: '//api.s1.dev.gaozhiyuan.com/v1'
+  authServerAddress: '//auth.s1.dev.gaozhiyuan.com'
+  CDN: '//static.s1.dev.gaozhiyuan.com/'
+
+production:
+  clientId: 1
+  clientSecret: 'd41d8cd98f00b204e9800998ecf8427e'
+  serverURL: '//gaozhiyuan.com'
+  apiURL: '//api.s1.dev.gaozhiyuan.com/v1'
+  authServerAddress: '//auth.s1.dev.gaozhiyuan.com'
+  CDN: '//static.s1.dev.gaozhiyuan.com/'

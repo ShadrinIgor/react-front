@@ -1,0 +1,68 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+        "jest": true,
+        "jquery": true
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb-base"],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "globals": {
+        "window":true,
+        "React": true,
+        "CONFIG": false,
+        "NODE_ENV": false,
+        "__REDUX_DEVTOOLS_EXTENSION_COMPOSE__": true,
+        "ENV": true,
+        "it":true,
+        "$": false
+    },
+    "plugins": [
+        "react"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+        "no-console": 0,
+        "object-curly-spacing": 0,
+        "linebreak-style": 0,
+        "indent" : ["error", 2, {"ArrayExpression": "first", "VariableDeclarator": 1, "SwitchCase" : 1}],
+        "comma-dangle": 0,
+        "eol-last" : 0,
+        "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+        "consistent-return" : 0,
+        "max-len": [0, 120, 2, {"ignoreComments": true}],
+        //"prop-types": [2],
+        "no-mixed-operators": 0,
+        "class-methods-use-this": 0,
+        "no-param-reassign": 0,
+        "semi": ["error","always"],
+        "react/jsx-uses-vars": [2],
+        "react/jsx-uses-react": ["error"],
+        "no-unused-vars": [1],
+        "no-case-declarations": 0,
+        "import/no-extraneous-dependencies": 0,
+        "no-bitwise": ["error", { "int32Hint": true }],
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+        "import/no-webpack-loader-syntax": 0,
+        "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
+        //"complexity": ["error", 10],
+        "max-depth": ["error", 2],
+        "max-nested-callbacks": ["error", 2],
+        "max-statements": 1,
+        "max-params": ["error", 5]
+    },
+    "settings": {
+        "import/resolver": {
+            "babel-module": {},
+            "webpack": "webpack.config.js"
+        }
+    }
+}

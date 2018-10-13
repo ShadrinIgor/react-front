@@ -1,0 +1,65 @@
+=transition($properties: all, $duration: .1s, $timing-function: ease-out)
+  +transition-property($properties)
+  +transition-duration($duration)
+  +transition-timing-function($timing-function)
+
+=images-list-builder($prefix, $images, $path)
+  @each $name, $value in $images
+    @if $value
+      $name: $value
+
+    .#{$prefix}#{$name}
+      background-image: url('#{$path}/#{$name}.svg')
+
+=box-shadow-default($type: null)
+  @if $type == hover
+    +box-shadow(0 4px 13px rgba(#000, .2))
+  @else if $type == select
+    +box-shadow(0 0 5px rgba(#000, .2))
+  @else if $type == dropdown
+    +box-shadow(0 1px 3px rgba(#000, .2))
+  @else if $type == none
+    +box-shadow(0)
+  @else
+    +box-shadow(0 1px 3px rgba(#000, .1))
+
+=responsive-media($step)
+  @if $step == 'xs'
+    @media (max-width: $screen-xs-max)
+      @content
+
+  @if $step == 'sm'
+    @media (min-width: $screen-sm-min) // and (max-width: $screen-sm-max)
+           @content
+
+  @if $step == 'md'
+    @media (min-width: $screen-md-min) // and (max-width: $screen-md-max)
+           @content
+
+  @if $step == 'lg'
+    @media (min-width: $screen-lg-min)
+      @content
+
+=equilateral-triangle($direction, $size, $color)
+  width: 0
+  height: 0
+
+  @if $direction == 'up'
+    border-left: $size solid transparent
+    border-right: $size solid transparent
+    border-bottom: $size solid $color
+
+  @else if $direction == 'down'
+    border-left: $size solid transparent
+    border-right: $size solid transparent
+    border-top: $size solid $color
+
+  @else if $direction == 'right'
+    border-top: $size solid transparent
+    border-bottom: $size solid transparent
+    border-left: $size solid $color
+
+  @else if $direction == 'left'
+    border-top: $size solid $color
+    border-bottom: $size solid $color
+    border-right: $size solid transparent

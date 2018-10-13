@@ -1,0 +1,48 @@
+@mixin pseudo()
+  position: absolute
+  content: ''
+
+.container
+  padding: 16px 36px
+
+.title
+  padding-bottom: 0
+  color: #000
+
+.item
+  position: relative
+  padding: 7px 0
+  .icon
+    float: left
+    height: 100%
+    width: 50px
+    position: absolute
+    top: 0
+    left: 0
+    &:after
+      @include pseudo()
+      width: 35px
+      height: 38px
+      background: url('./img/book.svg') center 7px #fff no-repeat
+      left: 1px
+      top: -5px
+
+    &:before
+      @include pseudo()
+      width: 1px
+      height: 100%
+      background-color: #f3f3f3
+      top: 19px
+      left: 19px
+  .content
+    margin-left: 50px
+    padding-right: 50px
+    border-bottom: 1px solid #f3f3f3
+
+  &:last-child
+    .icon
+      &:before
+        display: none
+    .content
+      border-bottom: 0
+

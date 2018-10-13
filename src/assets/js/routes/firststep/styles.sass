@@ -1,0 +1,100 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/size"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.container-modal-blue
+
+  color: #fff
+  background-color: #3289f2
+
+  h2
+    margin-bottom: 24px
+
+  h2, h3, h4
+    color: #fff
+
+  .text-muted
+    opacity: .7
+
+  form, .form
+    .form-group
+      &:first-child
+        margin-top: 16px
+
+  [type="submit"]
+    margin-top: 15px
+
+  input[type="radio"]
+    display: none
+    & ~ .radio
+      width: 18px
+      height: 18px
+      border: 2px solid #fff
+      border-radius: 50%
+      display: inline-block
+      vertical-align: middle
+      margin-right: 8px
+      &:before
+        content: ''
+        display: block
+        top: 2px
+        left: 2px
+        width: 10px
+        height: 10px
+        position: absolute
+        border-radius: 50%
+        +transition()
+
+    &:checked ~ .radio
+      &:before
+        background-color: #55CC72
+
+  input[type=text], input[type=email], input[type=phone]
+    &, &:focus, &:active, &:hover
+      background-color: #2278E1
+      border: none
+      border-radius: 3px
+      box-shadow: none
+      +transition()
+      &, &::placeholder
+        color: rgba(#fff, .5)
+
+      &, &:focus
+        box-shadow: none
+
+      &:focus
+        color: #fff
+
+  .btn
+    min-width: 120px
+    display: inline-block
+
+    &.btn-extra
+      color: #388CF0
+      padding-left: 26px
+      padding-right: 26px
+      background-color: #fff
+
+    &.btn-default
+      border-width: 2px
+      &, &:hover
+        border-color: #fff
+        color: #fff
+        background: none
+
+  div:global(.dropdown)
+    &:global(.open)
+      div:global(.dropdown-toggle)
+        input
+          color: $text-color
+          background-color: #fff
+          border-bottom-left-radius: 0
+          border-bottom-right-radius: 0
+          &::placeholder
+            color: rgba($text-color, .5)
+        span:global(.caret)
+          background-image: url("img/icons/24/dropdown_down_dark.svg")
+          background-size: 16px 10px
+      ul:global(.dropdown-menu)
+        margin-top: 0

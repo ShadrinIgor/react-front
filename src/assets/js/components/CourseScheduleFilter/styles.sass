@@ -1,0 +1,56 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.container
+  padding-top: 22px
+  padding-right: 22px
+  padding-left: 22px
+
+.icon
+  display: inline-block
+  background-position: center
+  background-repeat: no-repeat
+  vertical-align: text-top
+  width: 26px
+  height: 26px
+
+  &.calendar
+    background-image: url("./img/calendar.svg")
+    margin-right: 32px
+    margin-top: -4px
+    margin-left: 16px
+
+.filter
+  margin-top: 32px
+  font-size: 18px
+
+  .left
+    width: (104px - 22px)
+    padding-right: 22px
+    text-align: center
+
+  .links
+    a
+      color: $text-muted
+      text-decoration: none
+      display: inline-block
+      margin-right: 16px
+      +transition()
+
+      & > span
+        display: inline-block
+        padding: 8px 8px 6px
+
+      &:after
+        content: ""
+        display: block
+        height: 3px
+        background-color: transparent
+        +transition()
+
+      &:global(.active)
+        color: $text-color
+        &:after
+          background-color: #347bd4
+

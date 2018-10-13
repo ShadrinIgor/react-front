@@ -1,0 +1,32 @@
+@import "~styles/bootstrap/variables"
+
+.toasts
+  position: fixed
+  padding: 16px
+  right: 0
+  top: 0
+  width: 500px
+  z-index: $zindex-modal
+  overflow-y: auto
+
+// ReactCSSTransitionGroup
+.toasts-enter
+  opacity: 0
+  transition: opacity .15s ease-in
+
+  &.toasts-enter-active
+    opacity: 1
+
+.toasts-leave
+  opacity: 1
+  transition: opacity .25s ease-in
+
+  &.toasts-leave-active
+    opacity: 0
+
+.toasts-appear
+  opacity: 0
+  transition: opacity .15s ease-in
+
+  &.toasts-appear-active
+    opacity: 1

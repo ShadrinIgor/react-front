@@ -1,0 +1,46 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.container
+  display: block
+  &, &:hover, &:focus, &:active
+    text-decoration: none
+
+  .item
+    border-bottom: 1px solid $gray-lighter
+
+  &:last-child
+    border-bottom: none
+
+.cover
+  width: 100px
+
+.icon
+  width: 100px
+  height: 100px
+  background-position: center
+  background-repeat: no-repeat
+
+  &:global(.COURSE_TYPE_NEW_TEACHER)
+    background-image: url('./img/people.svg')
+
+  &:global(.COURSE_TYPE_LESSON_MOVED_TO_NEW_TIME)
+    background-image: url('./img/direct.svg')
+
+.content
+  padding: 16px
+
+  h5, p
+    margin-bottom: 0
+    margin-top: 0
+    line-height: 100%
+
+  h5
+    margin-bottom: 6px
+
+  +responsive-media('sm')
+    padding-left: 0
+
+
+

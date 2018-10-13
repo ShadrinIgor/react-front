@@ -1,0 +1,69 @@
+$dropdown-menu-arrow-size: 10px
+
+.dropdown-menu
+  border: none
+  border-top-width: 0
+  min-width: 100%
+  margin-top: $dropdown-menu-arrow-size - 1px
+  overflow-y: auto
+  max-height: 325px
+  animation-name: dropdown-show
+  animation-duration: .15s
+  animation-timing-function: ease-in-out
+  +box-shadow-default('dropdown')
+  +border-radius($border-radius-large)
+  +transition()
+
+  .list-group-item
+    & > a
+      padding: 10px 15px
+
+  &.dropdown-menu-stacked
+    margin-top: 0
+    +border-top-radius(0)
+
+.dropdown
+  .caret
+    border: none
+    background: no-repeat center center
+    background-image: url("../img/icons/24/dropdown_normal.svg")
+    background-size: 24px 24px
+    +transition()
+    +square(24px)
+    &.caret-dark
+      background-image: url("../img/icons/24/dropdown_dark.svg")
+
+  .btn
+    .caret
+      background-size: 16px
+
+  &.open
+    +box-shadow-default('dropdown')
+    [data-toggle='dropdown']
+      border-bottom-color: #eaeaea
+      +box-shadow(none)
+      +border-bottom-radius(0)
+
+    .caret
+      background-image: url("../img/icons/24/dropdown_down_normal.svg")
+      background-size: 16px 10px
+      &.caret-dark
+        background-image: url("../img/icons/24/dropdown_down_dark.svg")
+    .btn
+      .caret
+        background-size: 11px 9px
+
+    .dropdown-toggle
+      input.dropdown-toggle.form-control
+        color: $text-color
+
+  li
+    a
+      padding-top: 8px
+      padding-bottom: 8px
+
+.dropdown-toggle
+  &.btn
+    .caret
+      margin-right: -8px
+      margin-left: 8px

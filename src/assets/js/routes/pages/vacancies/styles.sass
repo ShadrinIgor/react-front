@@ -1,0 +1,39 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.header
+  height: 100px
+  text-align: center
+  display: table
+  width: 100%
+  table-layout: fixed
+  border-top-left-radius: 3px
+  border-top-right-radius: 3px
+  background-color: #377DD3
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center center
+  background-image: url("./img/header.png")
+
+  +responsive-media('sm')
+    height: 160px
+
+  +responsive-media('md')
+    height: 200px
+
+  h1
+    color: #fff
+
+  & > div
+    display: table-cell
+    vertical-align: middle
+
+.content
+  padding-bottom: 24px
+  margin-bottom: 0
+  margin-top: 24px
+
+.vacancies
+  border-top: 1px solid $gray-lighter
+  margin-bottom: 0

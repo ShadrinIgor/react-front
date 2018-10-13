@@ -1,0 +1,407 @@
+=rf-button-variant-color($color, $state)
+  $offset: 0
+  $opacity: 1
+  @if $state == 'hover'
+    $offset: 10
+  @else if $state == 'active'
+    $offset: -10
+  @else if $state == 'disabled'
+    $offset: 0
+    $opacity: .2
+
+  $color: rgba(red($color) + $offset, green($color) + $offset, blue($color) + $offset, 1)
+  background-color: $color
+  border-color: $color
+  +opacity($opacity)
+
+//  override default bootstrap mixins
+@mixin rf-button-variant($background, $text-color:#fff, $text-color-disabled:$text-color)
+  color: $text-color
+  background-color: $background
+  border-color: $background
+  +box-shadow(0 2px 1px rgba(#000, .1))
+
+  &:hover,
+  &:focus
+    color: $text-color
+    +rf-button-variant-color($background, 'hover')
+    +box-shadow(0 3px 5px rgba(#000, .1))
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle
+    color: $text-color
+    +rf-button-variant-color($background, 'active')
+    +box-shadow(0 2px 2px rgba(#000, 0))
+
+    &:hover,
+    &:focus,
+    &.focus
+      color: $text-color
+      +rf-button-variant-color($background, 'active')
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &
+    &,
+    &:hover,
+    &:focus,
+    &.focus
+      color: $text-color-disabled
+      +rf-button-variant-color($background, 'disabled')
+      +box-shadow(0 2px 2px rgba(#000, 0))
+
+  .badge
+    color: $background
+    background-color: $text-color
+
+
+.btn
+  @extend .btn
+  min-width: 104px
+  display: inline-block
+  border-width: 2px
+  margin-bottom: 8px
+  margin-right: 6px
+  margin-top: 0
+  +transition()
+  @include button-size($padding-base-vertical*1.2, $padding-base-horizontal*2, $font-size-base, $line-height-base, $btn-border-radius-base)
+
+  &:last-child
+    margin-right: 0
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &
+    cursor: default
+
+  .dot
+    background-color: $gray
+    display: inline-block
+    margin: 0 1.5px 1.5px
+    vertical-align: middle
+    +border-radius(50%)
+    +square(5px)
+
+.btn-default
+  +rf-button-variant(transparent)
+  +box-shadow(none)
+  border-color: #368fff
+  margin-top: 2px
+  color: #368fff
+  &:active, &.active, &:hover, &:focus
+    color: #fff
+    border-color: #368fff
+    background-color: #368fff
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle
+    color: #fff
+
+    &:hover,
+    &:focus,
+    &.focus
+      color: #fff
+      border-color: #2f85f0
+      background-color: #2f85f0
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &
+    color: #387DD1
+    border-color: #387DD1
+    background-color: transparent
+    &:hover,
+    &:focus,
+    &.focus
+      color: #387DD1
+      border-color: #387DD1
+      background-color: transparent
+
+.btn-gray
+  +rf-button-variant(transparent)
+  +box-shadow(none)
+  border-color: #f2f7fc
+  margin-top: 2px
+  color: #4c4c4c
+  &:active, &.active, &:hover, &:focus
+    color: #4c4c4c
+    border-color: #f2f2f2
+    background-color: #f2f2f2
+    +box-shadow(0 2px 2px rgba(#000, 0))
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle
+    color: #4c4c4c
+    +box-shadow(0 2px 2px rgba(#000, 0))
+
+    &:hover,
+    &:focus,
+    &.focus
+      color: #4c4c4c
+      border-color: #ededed
+      background-color: #ededed
+      +box-shadow(0 2px 2px rgba(#000, 0))
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &
+    color: #4c4c4c
+    border-color: #f2f7fc
+    background-color: transparent
+    &:hover,
+    &:focus,
+    &.focus
+      color: #4c4c4c
+      border-color: #f2f7fc
+      background-color: transparent
+
+.btn-white
+  +rf-button-variant(transparent)
+  +box-shadow(none)
+  border-color: #ffffff
+  margin-top: 2px
+  color: #ffffff
+  background-color: transparent
+  &:active, &.active, &:hover, &:focus
+    color: #4c4c4c
+    border-color: #ffffff
+    background-color: #ffffff
+    +box-shadow(0 2px 2px rgba(#000, 0))
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle
+    color: #4c4c4c
+    +box-shadow(0 2px 2px rgba(#000, 0))
+
+    &:hover,
+    &:focus,
+    &.focus
+      color: #4c4c4c
+      border-color: #ededed
+      background-color: #ededed
+      +box-shadow(0 2px 2px rgba(#000, 0))
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &
+    color: #f2f7fc
+    border-color: #f2f7fc
+    background-color: transparent
+    &:hover,
+    &:focus,
+    &.focus
+      color: #f2f7fc
+      border-color: #f2f7fc
+      background-color: transparent
+
+.btn-primary
+  +rf-button-variant(#368fff, #fff, #000)
+
+.btn-success
+  +rf-button-variant(#8ac900, #fff, darken(#8ac900, 30%))
+
+.btn-info
+  +rf-button-variant(#f2f7fc, $text-color)
+  margin-top: 2px
+  padding-bottom: 5px
+  &:hover,
+  &:focus
+    background-color: #f2f7fc
+    border-color: #f2f7fc
+
+.btn-info-com
+  color: #fff
+  background-color: #347bd4
+  border-color: #347bd4
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1)
+  &:hover,
+  &:focus
+    color: #fff
+    background-color: #3289f2
+    border-color: #3289f2
+
+.btn-warning
+  +rf-button-variant(#ffcc33, #824600, darken(#824600, 30%))
+
+.btn-danger
+  +rf-button-variant(#c9302c)
+
+.btn-extra
+  +rf-button-variant(#fff, $text-color, $text-color)
+  +box-shadow-default()
+  +border-radius($border-radius-base*1.5)
+  border-color: #fff
+
+  &:hover,
+  &:focus
+    +box-shadow-default('hover')
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle
+    color: #fff
+    border-color: #387DD1
+    background-color: #387DD1
+    +box-shadow-default('hover')
+    &:hover,
+    &:focus,
+    &.focus
+      color: #fff
+      border-color: #387DD1
+      background-color: #387DD1
+      +box-shadow-default('hover')
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &
+    border-color: #fff
+    background-color: #fff
+    +box-shadow-default()
+    +opacity(.45)
+    &:hover,
+    &:focus,
+    &.focus
+      color: #000
+      border-color: #fff
+      background-color: #fff
+      +box-shadow-default()
+      +opacity(.45)
+
+  &.btn-default
+    background: none
+    border-color: #387DD1
+    color: #fff !important
+    +box-shadow(none)
+
+    &:hover,
+    &:focus
+      +box-shadow-default('hover')
+
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle
+      +box-shadow-default('hover')
+      &:hover,
+      &:focus,
+      &.focus
+        +box-shadow-default('hover')
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] &
+      background: none
+      border-color: #387DD1
+
+.btn-light
+  +rf-button-variant($gray-base)
+  border: 1px solid $gray-light
+  padding-left: 0
+  padding-right: 0
+  min-width: 40px
+
+  &[aria-expanded=true]
+    +rf-button-variant($gray-base)
+
+.btn-link
+  padding-left: 0
+  padding-right: 0
+  min-width: 0
+  margin-right: 5px
+  border: none
+  &:last-child
+    margin-right: 0
+
+  &.disabled,
+  &[disabled]
+    text-decoration: none
+
+
+//// Button Sizes
+//// --------------------------------------------------
+//
+.btn-lg
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large)
+
+.btn-sm
+  @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small)
+
+.btn-xs
+  @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small)
+  &.btn-default
+    padding-top: $padding-xs-vertical + 1px
+
+.btn-extra
+  @include button-size($padding-base-vertical, $padding-base-horizontal*2, $font-size-base, $line-height-base, $btn-border-radius-base)
+  &.btn-lg
+    @include button-size($padding-large-vertical, $padding-large-horizontal*2, $font-size-large, $line-height-large, $btn-border-radius-large)
+    &.btn
+      +border-radius($border-radius-large*1.5)
+
+  &.btn-sm
+    @include button-size($padding-small-vertical, $padding-small-horizontal*2, $font-size-small, $line-height-small, $btn-border-radius-small)
+    &.btn
+      +border-radius($border-radius-small*1.5)
+
+  &.btn-xs
+    @include button-size($padding-xs-vertical, $padding-xs-horizontal*8, $font-size-small, $line-height-small, $btn-border-radius-small)
+    &.btn
+      +border-radius($border-radius-base)
+
+
+.btn-play
+  background-color: rgba($btn-primary-bg, .1)
+  padding: 12px
+  line-height: 0
+  font-size: 0
+  +border-radius(50%)
+  +box-shadow(none)
+  .container-icon
+    background-color: $btn-primary-bg
+    margin: 0
+    vertical-align: middle
+    display: table-cell
+    +border-radius(50%)
+    +square(86px)
+
+  &:hover
+    background-color: rgba($btn-primary-bg, .6)
+  &.disabled
+    &, &:hover
+      background-color: rgba(#000, .05)
+    .container-icon
+      background-color: rgba(#000, .1)
+
+  &[data-state=play]
+    animation-name: pulse
+    animation-duration: 2s
+    animation-timing-function: ease-out
+    animation-iteration-count: infinite
+    .container-icon
+
+      animation-name: pulse2
+      animation-duration: 1.8s
+      animation-timing-function: ease-out
+      animation-iteration-count: infinite
+
+      .icon_32_dashboard_play
+        @extend .icon_32_dashboard_pause
+
+
+.nav-tabs
+  border-bottom: none !important
+  margin-left: 15px
+  > li
+    > a
+      border: none
+      color: $text-color
+
+    &.active > a
+      &,
+      &:hover,
+      &:focus
+        border: none
+        color: $text-color

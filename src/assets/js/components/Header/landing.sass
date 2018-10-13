@@ -1,0 +1,64 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "../../../styles/bootstrap/variables"
+@import "../../../styles/common/mixins"
+
+.header
+  margin-bottom: 0
+
+.navbar
+  z-index: $zindex-navbar
+  width: 100%
+  +transition()
+
+  ul
+    padding-bottom: 10px
+    text-align: center
+    li
+      padding-left: 16px
+      padding-right: 16px
+
+      +responsive-media('sm')
+        padding-left: 0
+        padding-right: 0
+
+    +responsive-media('sm')
+      padding-bottom: 0
+      text-align: left
+
+  &.navbar-landing
+    position: absolute
+    top: 10px
+    background-color: transparent
+    &:last-child
+      +box-shadow(none)
+
+    ul
+      background-color: rgba(#000, .4)
+      margin-top: 0
+      padding-top: 8px
+      padding-bottom: 16px
+
+      +responsive-media('sm')
+        background-color: transparent
+        padding-top: 0
+        padding-bottom: 0
+
+    .navbar-brand
+      background: url("./img/logo_annotate.svg") no-repeat center center
+      background-size: 117px, 79px
+      width: 117px
+      height: 79px
+      margin-top: -7px
+      margin-left: 14px
+
+      +responsive-media('sm')
+        margin-left: 7px
+
+    +responsive-media('sm')
+      top: 20px
+
+    +responsive-media('md')
+      top: 40px
+
+  &.navbar-landing-fixed-top
+    position: fixed

@@ -1,0 +1,34 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.filter
+  margin-top: 6px
+  font-size: 15px
+  line-height: 18px
+
+  & > span
+    margin-right: 8px
+
+  a
+    color: #727272
+    text-decoration: none
+    display: inline-block
+    margin-left: 4px
+    margin-right: 4px
+    +transition()
+
+    & > span
+      padding-right: 2px
+      padding-left: 2px
+
+    &:after
+      content: ''
+      display: block
+      height: 4px
+      background: transparent
+      +transition()
+
+    &:global(.active), &:hover, &:focus
+      &:after
+        background: $brand-primary

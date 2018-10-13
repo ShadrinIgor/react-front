@@ -1,0 +1,35 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/labels"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/labels"
+
+.label
+  line-height: 100%
+  font-size: 14px
+  font-weight: 400
+  padding-left: 16px
+  padding-right: 16px
+  composes: label
+
+.label + .label
+  margin-left: 16px
+
+.round
+  border-radius: 12px
+  background-color: #f7f7f7
+  color: #999999
+
+.label-warning
+  composes: label-warning
+  &.extended
+    color: #fff
+    background-color: #ff9c00
+
+.label-success
+  composes: label-success
+  &.extended
+    color: #fff
+    background-color: #5fd0c3
+
+.cursorPointer
+  cursor: pointer

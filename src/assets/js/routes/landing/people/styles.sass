@@ -1,0 +1,22 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~styles/common/mixins"
+
+.container
+  background-color: white
+
+.people
+  background-image: url('./img/people.svg')
+  background-repeat: no-repeat
+  background-position: bottom center
+  background-size: 100% auto
+  height: 0
+
+  +responsive-media('sm')
+    height: 130px
+
+  +responsive-media('md')
+    height: 180px
+
+  +responsive-media('lg')
+    height: 200px

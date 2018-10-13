@@ -1,0 +1,75 @@
+@import "~compass-sass-mixins/lib/compass"
+@import "~styles/bootstrap/variables"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/labels"
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/labels"
+
+.list
+  margin-bottom: 22px
+
+.item
+
+  .date, .content, .actions, .menu
+    padding: 24px 16px
+
+  .date
+    width: 104px
+    text-align: center
+    vertical-align: top
+    background-color: #fafafa
+    h6
+      margin:
+        bottom: 2px
+
+  .content
+    padding-left: 32px
+
+    h5
+      .exam
+        margin-right: 16px
+
+    .homework
+      margin-top: 22px
+      padding-top: 16px
+      border-top: 1px solid $gray-lighter
+
+      .title
+        margin-right: 8px
+
+  .actions
+    width: 240px
+    text-align: right
+    vertical-align: top
+    padding-right: 16px
+    padding-top: 22px
+
+  .menu
+    width: 66px
+    text-align: center
+    vertical-align: top
+    padding-left: 0
+    padding-top: 28px
+
+  .icon
+    display: inline-block
+    width: 16px
+    height: 16px
+    background-repeat: no-repeat
+    background-position: center
+    vertical-align: text-top
+    margin-right: 8px
+
+    &.done
+      background-image: url("./img/done.svg")
+      &.muted
+        background-image: url("./img/done_muted.svg")
+
+    &.warning
+      background-image: url("./img/warning.svg")
+
+    &.book
+      background-image: url("./img/homework.svg")
+      width: 19px
+
+    &.exam
+      background-image: url("./img/medal.svg")
+      height: 23px

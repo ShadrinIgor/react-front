@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <title>高知院</title>
+
+    <link rel="apple-touch-icon" href="<%= require("./assets/img/favicon/152.png") %>"/>
+    <link rel="icon" href="<%= require("./assets/img/favicon/96.png") %>"/>
+    <!--[if IE]>
+    <link rel="shortcut icon" href="<%= require("./assets/img/favicon/32.ico") %>"/>
+    <![endif]-->
+    <!-- or, set /favicon.ico for IE10 win -->
+    <meta name="msapplication-TileColor" content="#3289f3"/>
+    <meta name="msapplication-TileImage" content="<%= require("./assets/img/favicon/144.png") %>"/>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- script(src=require('ie10-viewport-bug-workaround.js/ie10-viewport-bug-workaround.js')) -->
+
+    <script src="<%= htmlWebpackPlugin.files.chunks.modernizr.entry %>"></script>
+    <script src="<%= require("bowser/bowser.min.js") %>"></script>
+
+    <!--[if lte IE 11]>
+    <script src="<%= require("es6-promise-polyfill/promise.min.js") %>"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div id="root"></div>
+<script>
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+
+  if (bowser.check({"msie": "9", "chrome": '45'})) {
+    script.async = false;
+    script.src = "<%= htmlWebpackPlugin.files.chunks.bundle.entry %>";
+    document.body.appendChild(script);
+  } else {
+    var assets = {
+      logo: "<%= require("js/routes/check/img/logo-gaozhiyuan.png") %>",
+      icons: {
+        chrome: "<%= require("js/routes/check/img/chrome.png") %>",
+        ie: "<%= require("js/routes/check/img/ie.png") %>",
+        safari: "<%= require("js/routes/check/img/safari.png") %>",
+        firefox: "<%= require("js/routes/check/img/firefox.png") %>"
+      }
+    };
+    var css = "<%= require("!!raw-loader!sass-loader!js/routes/check/styles.sass").replace(/(\r\n|\n|\r|\t)/gm, "").replace(/"/g, "\\\"") %>"
+      .replace("assets.logo", assets.logo)
+      .replace("assets.icons.chrome", assets.icons.chrome)
+      .replace("assets.icons.ie", assets.icons.ie)
+      .replace("assets.icons.safari", assets.icons.safari)
+      .replace("assets.icons.firefox", assets.icons.firefox);
+
+    function addCSS(css) {
+      var head = document.head || document.getElementsByTagName('head')[0];
+      var s = document.createElement("style");
+      s.type = 'text/css';
+      if (s.styleSheet) {
+        s.styleSheet.cssText = css;
+      } else {
+        s.appendChild(document.createTextNode(css));
+      }
+      head.appendChild(s);
+    }
+
+    addCSS(css);
+
+    script.src = "<%= require("js/oldBrowser") %>";
+    document.body.appendChild(script);
+
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+@mixin flag-variant($color, $background-color)
+  color: $color
+  background-color: $background-color
+  &:after
+    border-color: $background-color transparent $background-color $background-color
+  &.flag-right
+    &:after
+      border-color: $background-color $background-color $background-color transparent
+
+.flag
+  font-size: $font-size-small
+  position: absolute
+  display: inline-block
+  height: 40px
+  padding: 10px
+  left: 0
+  &:after
+    content: ' '
+    position: absolute
+    width: 10px
+    height: 0
+    right: -10px
+    top: 0
+    border-width: 20px 10px
+    border-style: solid
+
+  &.flag-right
+    text-align: right
+    margin-left: 10px
+    left: auto
+    right: 0
+    &:after
+      left: -10px
+
+  .icon_24
+    vertical-align: middle
+    margin-top: -5px
+
+  &, &.flag-warning
+    +flag-variant($state-warning-text, $brand-warning-darken)
+
+  &.flag-success
+    +flag-variant(#fff, $brand-success)
+
+  &.flag-default
+    +flag-variant($gray-light, #fff)
